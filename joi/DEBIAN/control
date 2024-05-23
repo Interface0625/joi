@@ -1,0 +1,8 @@
+Package: joi
+Version: 1.0.0
+Architecture: all
+Maintainer: Karolis Lukosius <karolis.lukosius@gmail.com>
+Pre-Depends: i3 i3blocks lightdm picom feh rofi alacritty zsh tmux plymouth plymouth-themes thunar git gcc build-essential
+Section: devel
+Priority: optional
+Description: Joi is a simple script that installs all the necessary packages and configurations for a fresh Debian (minimal) Linux installation.

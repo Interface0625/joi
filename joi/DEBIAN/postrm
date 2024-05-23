@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# restor original files from /usr/share/joi/original
+#   /etc/lightdm/lightdm.conf
+#   /etc/lightdm/lightdm-gt3-greeter.conf
+#   /etc/default/grub
+#   /etc/plymouth/plymouthd.conf
+
+ORIGINAL_DIR="/usr/share/joi/original"
+
+if [ ! -d $ORIGINAL_DIR ]; then
+    echo "Original files not found in $ORIGINAL_DIR"
+    exit 1
+fi
+
+mv $ORIGINAL_DIR/lightdm.conf /etc/lightdm/lightdm.conf
+mv $ORIGINAL_DIR/lightdm-gt3-greeter.conf /etc/lightdm/lightdm-gt3-greeter.conf
+mv $ORIGINAL_DIR/grub /etc/default/grub
+mv $ORIGINAL_DIR/plymouthd.conf /etc/plymouth/plymouthd.conf
+rm -rf $ORIGINAL_DIR

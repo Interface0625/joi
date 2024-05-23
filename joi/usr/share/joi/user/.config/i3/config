@@ -1,0 +1,55 @@
+# i3 config file (v4)
+
+set $mod Mod4
+font pango:JetBrainsMono Nerd Font 8 
+
+include exec.config
+include bindsym.config
+include workspace.config
+include theme.config
+
+gaps inner 0px
+smart_borders on
+default_border pixel 3
+default_floating_border pixel 3
+
+set $refresh_i3status killall -SIGUSR1 i3status
+floating_modifier $mod
+tiling_drag modifier titlebar
+
+mode "resize" {
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
+
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+### Panel/Bar
+bar {
+	i3bar_command i3bar --transparency
+	status_command SCRIPT_DIR=~/.config/i3/scripts i3blocks -c ~/.config/i3/i3blocks.config
+	separator_symbol "‎"
+	position top
+	height 22		
+        tray_output none
+#	mode hide	
+	colors {
+		statusline	#000000
+		background	#28282900
+		separator	#282828
+
+		#name              #border #bg     #text
+        	focused_workspace  #515151 #51515100 #BBBBBB
+        	active_workspace   #0f1316 #0f131600 #BBBBBB
+	      	inactive_workspace #0f1316 #0f131600 #BBBBBB
+	}
+}

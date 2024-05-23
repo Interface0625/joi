@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# create a backup dir for backing up original files
+# copy original files to /usr/share/joi/original (these files should be restored on uninstall)
+#   /etc/lightdm/lightdm.conf
+#   /etc/lightdm/lightdm-gt3-greeter.conf
+#   /etc/default/grub
+#   /etc/plymouth/plymouthd.conf
+
+ORIGINAL_DIR="/usr/share/joi/original"
+mkdir -p $ORIGINAL_DIR
+ORIGINAL_FILES=("/etc/lightdm/lightdm.conf" "/etc/lightdm/lightdm-gt3-greeter.conf" "/etc/default/grub" "/etc/plymouth/plymouthd.conf")
+for file in ${ORIGINAL_FILES[@]}; do
+    mv $file $ORIGINAL_DIR
+done
+
