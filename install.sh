@@ -56,7 +56,7 @@ flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.f
 # Setup dot config files
 cd $builddir
 
-cp -R user/* /home/$username/
+cp -R user/. /home/$username/
 chown -R $username:$username /home/$username
 
 # System wide configuration
