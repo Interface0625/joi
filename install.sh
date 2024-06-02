@@ -40,17 +40,17 @@ nala update
 nala install code -y
 
 # installs fnm (Fast Node Manager)
-curl -fsSL https://fnm.vercel.app/install | bash
+# sudo -u $username curl -fsSL https://fnm.vercel.app/install | bash
 # download and install Node.js
-fnm use --install-if-missing 20
+# sudo -u $username fnm use --install-if-missing 20
 
 
 # Configure Flatpak
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-# flatpak override --filesystem=/usr/share/themes
-# flatpak override --filesystem=/usr/share/icons
-# flatpak override --env=GTK_THEME=Nordic
-# flatpak override --env=ICON_THEME=Papirus-Dark
+flatpak override --filesystem=/usr/share/themes
+flatpak override --filesystem=/usr/share/icons
+flatpak override --env=GTK_THEME=Nordic
+flatpak override --env=ICON_THEME=Papirus-Dark
 
 
 # Setup dot config files
