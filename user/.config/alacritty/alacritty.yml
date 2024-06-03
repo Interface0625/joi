@@ -180,7 +180,6 @@ font:
   # characters (Unicode points 2500 - 259f).
   #
   #builtin_box_drawing: true
-
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
@@ -442,8 +441,8 @@ font:
 #  program: /bin/bash
 #  args:
 #    - --login
-shell:
-  program: tmux
+#shell:
+#  program: tmux
 # Startup directory
 #
 # Directory the shell is started in. If this is unset, or `None`, the working

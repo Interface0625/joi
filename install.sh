@@ -68,11 +68,11 @@ update-initramfs -u
 fc-cache -vf
 
 # Enable graphical login and change target from CLI to GUI
-systemctl enable lightdm
-systemctl set-default graphical.target
+#systemctl enable lightdm
+#systemctl set-default graphical.target
 
 # Enable wireplumber audio service
-sudo -u $username systemctl --user enable wireplumber.service
+#sudo -u $username systemctl --user enable wireplumber.service
 
 # Use nala
 bash scripts/usenala.sh
